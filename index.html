@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Reproductor de audio en el fondo -->
+    <audio id="background-music" autoplay loop>
+        <source src="audio/cerati.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="background-video" playsinline webkit-playsinline>
+        <source src="images/nebulosa.mp4" type="video/mp4">
+    </video>
+    
+    <div class="background-overlay"></div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nuestra Historia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hijos">Hijos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#albumes">Álbumes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="nosotros" class="section">
+            <h1>Nosotros</h1>
+            <br>
+            <button id="play-pause-button" class="btn btn-primary btn-lg" onclick="toggleMusic()">Reproducir Música</button>
+            <br>
+            <br>
+            <img src="images/imagen9.jpg" alt="" width="560" height="315">
+            <p>Un amor que trasciende el tiempo y el espacio...</p>
+        </section>
+
+        <section id="proyectos" class="section">
+            <h2>Proyectos</h2>
+            <p>Juntos espero que construyamos los más maravillosos recuerdos y aventuras.</p>
+        </section>
+
+        <section id="hijos" class="section">
+            <h2>Nuestros Hijos</h2>
+            <p>Ellos serán el fruto de nuestro amor, nuestra confianza, nuestra paciencia, comprensión y ternura para con el otro.</p>
+            <ul>
+                <li><strong>Francesca</strong></li>
+                <li><strong>Valentino</strong></li>
+                <li><strong>Martina</strong></li>
+                <li><strong>Ciro</strong></li>
+            </ul>
+        </section>
+
+        <section id="nuestra-cancion" class="section">
+            <h2>Nuestra Canción</h2>
+            <p><strong>Título:</strong> <a href="https://youtu.be/-jx5vm7QjGY?si=dD2OH-W3owy5a-Rq" target="_blank" style="color: #00f; text-decoration: underline;">Vivo</a></p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-jx5vm7QjGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Lugar favorito:</strong> Un rincón especial en nuestro corazón</p>
+            <img src="images/imagen3.jpg" alt="" width="560" height="315">
+        </section>
+
+        <section id="albumes" class="section">
+            <h2>Álbumes de Fotos</h2>
+            <div class="albums">
+                <div class="album-gallery">
+                    <!-- Generar las imágenes de la galería -->
+                    <script>
+                        for (let i = 1; i <= 28; i++) {
+                            document.write(`<img src="images/imagen${i}.jpg" alt="Foto ${i}">`);
+                        }
+                    </script>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMusic() {
+            const audio = document.getElementById('background-music');
+            const button = document.getElementById('play-pause-button');
+    
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pausar Música';
+            } else {
+                audio.pause();
+                button.textContent = 'Reproducir Música';
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
